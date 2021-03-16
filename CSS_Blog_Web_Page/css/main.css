@@ -24,8 +24,8 @@ body {
 	line-height: 1.6;
 	font-family: "Open Sans", sans-serif;
 	color: #777777;
-	background-color: #222222;
-	background-image: url("../background.jpg");
+	background: #222222;
+	background: url("../background.jpg");
 }
 
 h1, h2 {
@@ -36,6 +36,7 @@ h1, h2 {
 
 h1 {
 	font-size: 7rem;
+	margin: 2rem 0 4rem 0;
 }
 
 h2 {
@@ -62,7 +63,7 @@ img {
 a {
 	display: inline-block;
 	padding: .5rem 1rem;
-	background-color: rgba(255,255,255,.1);
+	background: rgba(255,255,255,.1);
 	color: #eeeeee;
 }
 
@@ -71,11 +72,22 @@ nav, body > section, footer {
 	max-width: 100rem;
 	margin: 0 auto;
 	padding: 3rem;
-	outline: 2px solid darkgoldenrod;
 }
 
 body > section {
 	border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+body > section::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+footer::after {
+	content: "";
+	display: block;
+	clear: both;
 }
 
 /* Header ============================== */
@@ -110,6 +122,30 @@ nav li {
 	border-top: .5rem solid #1abc9c;
 }
 
+#blog article:nth-of-type(4) {
+	border-top: .5rem solid #e74c3c;
+	clear: left;
+}
+
+#blog article:nth-of-type(5) {
+	border-top: .5rem solid #f1c40f;
+}
+
+#blog article:nth-of-type(6) {
+	border-top: .5rem solid #1abc9c;
+}
+
+#blog article {
+	width: calc(100%/3 - 2rem);
+	float: left;
+}
+
+#blog article:not(:nth-of-type(3)) {
+	margin-right: 2rem;
+
+}
+
+
 /* News ================================ */
 time span {
 	font-size: 5rem;
@@ -117,20 +153,39 @@ time span {
 	vertical-align: middle;
 	font-family: 'Ranchers', cursive;
 }
+
 #news {
-	background-color: #f1c40f;
+	background: #f1c40f;
 	font-family: 'Redressed', cursive;
+}
+
+#news article {
+	width: calc(100%/4 - 6rem/4);
+	float: left;
+}
+
+#news article:not(:nth-of-type(4)) {
+	margin-right: 2rem;
 }
 
 /* Donation ============================ */
 #donation {
-	background-image: url("https://coolbackgrounds.io/images/backgrounds/black-triangle-b9cb7263.jpg");
-	background-repeat: no-repeat;
+	background: url("https://coolbackgrounds.io/images/backgrounds/black-triangle-b9cb7263.jpg") no-repeat;
+}
+
+/* About ============================ */
+#about section {
+	width: calc(100%/2 - 2rem);
+	float: left;
+}
+
+#about section:first-of-type {
+	margin-right: 2rem;
 }
 
 /* Footer ============================== */
 footer {
-	background-color: #1abc9c;
+	background: #1abc9c;
 }
 footer h2 {
 	font-size: 1.6rem;
@@ -142,9 +197,19 @@ footer h2 {
 }
 
 #tags a {
-	background-color: #e74c3c;
+	background: #e74c3c;
 	color: #eeeeee;
 	padding: 0 .5rem .25rem .5rem;
 }
 
+footer section {
+	width: calc(30% - 2rem);
+	margin-right: 2rem;
+	float: left;
+}
+
+#tags {
+	width: calc(40%);
+	margin-right: 0rem;
+}
 
